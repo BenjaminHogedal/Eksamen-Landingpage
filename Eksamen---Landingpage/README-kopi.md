@@ -1,2 +1,0 @@
-# Lumina Audio
-landingpage case
