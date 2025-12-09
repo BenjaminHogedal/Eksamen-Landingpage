@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Lumina Audio</title>
+
+  <!-- Stylesheet: Sørg for at stien er korrekt -->
+  <link rel="stylesheet" href="css/css.css">
+
+  <!-- Bootstrap icons: ok at have, bruges i footer -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+</head>
+<body>
+
+<!--navigation-->
+<nav class="top-nav">
+  <!-- venstre menu-ikon -->
+  <ul class="nav-links">
+    <li><a href="#">☰</a></li> 
+  </ul>
+
+  <!-- midter-logo -->
+  <div class="logo">
+    <a href="#"><img src="images/Luminalogo.png" alt="Lumina Audio Logo"></a>
+  </div>
+
+  <!-- søgeform -->
+  <form class="search-bar" action="#" method="get">
+    <input type="text" placeholder="Søg..." name="search">
+    <button type="submit"></button> <!-- Accessibility: tom knap - overvej at tilføje aria-label eller indhold -->
+  </form>
+
+  <!-- ikoner højre side - brug <a> med tydeligt alt-tekst (du har billeder) -->
+  <a href="#" class="favorites" title="Favoritter" style="font-size: 1.5rem; margin-left: 0.7rem;">
+    <img src="images/Hjerteikon.png" alt="Favoritter">
+  </a>
+  <a href="#" class="basket" title="Kurv" style="font-size: 1.5rem; margin-left: 0.7rem;">
+    <img src="images/Kurvikon.png" alt="Kurv">
+  </a>
+  <a href="#" class="profile" title="Profil" style="font-size: 1.5rem; margin-left: 0.7rem;">
+    <img src="images/Profilikon.png" alt="Profil">
+  </a>
+</nav>
+
+
+
+<!-- Header / Hero -->
+<section class="hero">
+  <video class="hero-video" autoplay loop muted playsinline>
+    <source src="video-mp4/nyvideo.mp4" type="video/mp4">
+  </video>
+
+  <!-- overlay-tekst (h1 skal være inde i hero og semantisk korrekt) -->
+  <div class="hero-text">
+    <h1>LUMINA ONE</h1>
+  </div>
+
+  <!-- produkt-tekst: absolut placeret. Husk z-index så den ligger over overlay -->
+  <p class="produkt-tekst">
+    Æstetisk, funktionel og transportabel højtaler der samler - mere end bare lyd. 
+    Med lang batteritid, så stemningen aldrig går på pause.
+  </p>
+
+  <!-- CTA knap -->
+  <div> 
+    <a href="#products" class="cta-button">KØB HER</a>
+  </div>
+</section>
+
+<!-- NOTE: I original fil var der <style> blok og efterfølgende et forkert </header> — sørg for at fjerne ubrugte slut-tags -->
+
+<main>
+  <!-- CTA sektion under hero -->
+  <section id="CTA">
+    <h2> Find din lyd - Lumina One </h2>
+  </section>
+
+  <!-- produkts-grid -->
+  <div class="grid" id="products">
+    <!-- tom container i original — nedenfor følger det reelle grid (du har en ekstra .grid senere) -->
+  </div>
+
+  <!-- HER ER DIN VARE-GRID (du har to .grid i original; hold kun én i live) -->
+<div class="grid" id="products">
+  <!-- Produkt 1 -->
+  <div class="product">
+    <div class="nyhed">Nyhed</div>
+    <button class="favorites-icon" aria-label="Favorit">
+      <img src="images/Hjerteikon.png" alt="Hjerteikon">
+    </button>
+    <div class="product-image">
+      <img src="images/hvidhoejtaler.png" alt="Lumina One Moonlight White">
+    </div>
+    <div class="product-body">
+      <h3>Lumina One - Moonlight White</h3>
+      <p class="price">1.995 kr.</p>
+    </div>
+  </div>
+
+  <!-- Produkt 2 -->
+  <div class="product">
+    <div class="nyhed">Nyhed</div>
+    <button class="favorites-icon" aria-label="Favorit">
+      <img src="images/Hjerteikon.png" alt="Hjerteikon">
+    </button>
+    <div class="product-image">
+      <img src="images/beigehoejtaler.png" alt="Lumina One Dusty Sand">
+    </div>
+    <div class="product-body">
+      <h3>Lumina One - Dusty Sand</h3>
+      <p class="price">1.995 kr.</p>
+    </div>
+  </div>
+
+  <!-- Produkt 3 -->
+  <div class="product">
+    <div class="nyhed">Nyhed</div>
+    <button class="favorites-icon" aria-label="Favorit">
+      <img src="images/Hjerteikon.png" alt="Hjerteikon">
+    </button>
+    <div class="product-image">
+      <img src="images/groenhoejtaler.png" alt="Lumina One Sage Green">
+    </div>
+    <div class="product-body">
+      <h3>Lumina One - Sage Green</h3>
+      <p class="price">1.995 kr.</p>
+    </div>
+  </div>
+
+  <!-- Produkt 4 -->
+  <div class="product">
+    <div class="nyhed">Nyhed</div>
+    <button class="favorites-icon" aria-label="Favorit">
+      <img src="images/Hjerteikon.png" alt="Hjerteikon">
+    </button>
+    <div class="product-image">
+      <img src="images/orangehoejtaler.png" alt="Lumina One Terracotta Orange">
+    </div>
+    <div class="product-body">
+      <h3>Lumina One - Terracotta Orange</h3>
+      <p class="price">1.995 kr.</p>
+    </div>
+  </div>
+</div>
+
+  <!-- promo sektion -->
+  <section class="promo-section promo--totes">
+  <div class="tote-item">
+    <!-- venstre billede: tote/arm -->
+    <img src="images/totebag.png" alt="Gratis tote bag" />
+  </div>
+
+  <div class="promo-text promo-text--center">
+    <h2 class="promo-title">Medfølgende tote bag</h2>
+    <p>
+      Tag musikken med på farten - få en <strong>gratis</strong> tote bag med, når du køber en Lumina One højtaler.
+    </p>
+  </div>
+
+  <div class="promo-item promo-item--right">
+    <!-- højre billede:  -->
+    <img src="images/Luminaogtotebag.png" alt="Lumina One og tote bag" />
+  </div>
+</section>
+
+  <!-- funktioner -->
+  <section class="funktioner-grid">
+  <h2 class="funktioner-title">Lumina One - Funktioner</h2>
+
+  <div class="funktioner-wrapper">
+
+    <div class="funktion-item">
+      <img src="images/Lydstyrkeikon.png" alt="Lydstyrke">
+      <h3>Lydstyrke</h3>
+      <p>God nok - op til 100dB. Nok til en strandfest eller park picnic uden at være “for meget”.</p>
+    </div>
+
+    <div class="funktion-item">
+      <img src="images/Designikon.png" alt="Design">
+      <h3>Design</h3>
+      <p>Findes i farver som Dusty Sand, Sage Green, Moonlight White og Terracotta Orange.</p>
+    </div>
+
+    <div class="funktion-item">
+      <img src="images/Lysstemningikon.png" alt="Lysstemning">
+      <h3>Lysstemning</h3>
+      <p>Højtaleren har integreret ambientlys som kan tilpasses efter chill, party og sunset mode.</p>
+    </div>
+
+    <div class="funktion-item">
+      <img src="images/Vegtikon.png" alt="Vægt">
+      <h3>Vægt</h3>
+      <p>Vejer kun 4,5 kg og er nem at tage med på farten.</p>
+    </div>
+
+    <div class="funktion-item">
+      <img src="images/Batteritidikon.png" alt="Batteritid">
+      <h3>Batteritid</h3>
+      <p>Holder strøm længe. Op til 18 timers spilletid og genopladeligt batteri via USB-C.</p>
+    </div>
+
+    <div class="funktion-item">
+      <img src="images/Tilslutningikon.png" alt="Tilslutning">
+      <h3>Tilslutning</h3>
+      <p>Bluetooth 5.3, AUX og mulighed for at parre 3 enheder.</p>
+    </div>
+
+    <div class="funktion-item">
+      <img src="images/Vandafvisendeikon.png" alt="Vandafvisende">
+      <h3>Vandafvisende</h3>
+      <p>IPX5 vandafvisende – tåler lidt regn og splash.</p>
+    </div>
+
+    <div class="funktion-item">
+      <img src="images/Transportabelikon.png" alt="Transportabel">
+      <h3>Transportabel</h3>
+      <p>Kan hænge på taske eller knage.</p>
+    </div>
+
+  </div> 
+
+</section>
+
+<!-- anmeldelser -->
+<section class="reviews">
+  <h2 class="reviews-title">Hvad vores kunder mener:</h2>
+
+  <div class="reviews-grid">
+
+    <div class="review-item">
+      <img src="images/femstjerner.png" class="stars" alt="5 stjerner">
+      <p class="review-text">“Batteriet holder og så er den 
+  ovenikøbet sød at se på. Den passer lige ind i min lejlighed og
+  bliver brugt hver gang veninderne er forbi””</p>
+      <h3 class="review-name">Sofie Andersen</h3>
+    </div>
+
+    <div class="review-item">
+      <img src="images/firestjerner.png" class="stars" alt="4 stjerner">
+      <p class="review-text">“Så nice at den har hank. Jeg kan 
+        have den til at hænge på min cykelkurv,når der ikke er 
+        plads til den. ”</p>
+      <h3 class="review-name">Emma Sørensen</h3>
+    </div>
+
+    <div class="review-item">
+      <img src="images/femstjerner.png" class="stars" alt="5 stjerner">
+      <p class="review-text">“Perfekt til enhver lejlighed. 
+        Så kommer den i de sødeste farver. Kan helt klar anbefales”</p>
+      <h3 class="review-name">Maria Rasmussen</h3>
+    </div>
+
+  </div>
+
+  <p class="review-count">Se alle 21.587 anmeldelser</p>
+</section>
+
+
+
+</main>
+
+<!-- footer -->
+<footer>
+  <div class="footer-container">
+    <div class="footer-col">
+      <h4>Følg os</h4>
+      <div class="socials">
+        <a href="#"><img src="images/facebook.svg" alt="Facebook"></a>
+        <a href="#"><img src="images/instagram.svg" alt="Instagram"></a>
+      </div>
+    </div>
+
+    <div class="footer-col">
+      <h4>Kontakt os</h4>
+    
+      <p><i class="bi bi-geo-alt"></i> Sønderhøj 30,<br>8000 Aarhus</p>
+      <p><i class="bi bi-envelope"></i> <a href="mailto:support@luminaaudio.com">Support@luminaaudio.com</a></p>
+      <p><i class="bi bi-telephone"></i> +45 12 34 56 78</p>
+    </div>
+
+    <div class="footer-col">
+      <h4>Nyhedsbrev</h4>
+      <p>Abonner for at få vores nyhedsbrev</p>
+      <form>
+        <input type="email" placeholder="Skriv din email her" required>
+        <button type="submit">Abonner</button>
+      </form>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <p>© LUMINA // AUDIO</p>
+  </div>
+</footer>
+
+<!-- Back to top knap -->
+<button id="backToTop">↑ Top</button>
+
+<!-- script: indlæses sidst -->
+<script src="js/js.js"></script>
+</body>
+</html>

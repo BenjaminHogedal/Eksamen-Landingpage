@@ -1,0 +1,1012 @@
+/**
+ * css/css.css — oprydet version
+ * Beholdt visuel opførsel — filen er kun omorganiseret og duplikater fjernet.
+ */
+
+/* ===========================
+   RESET
+   =========================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ===========================
+   TYPOGRAFI / GENERELLE TEKSTRULES
+   =========================== */
+h2 {
+  color: rgb(37, 36, 35);
+  text-align: center;
+  font-size: 36px;
+}
+aside {
+  text-align: center;
+}
+/* farve for afsnitstekst */
+p {
+  color: rgb(36, 32, 32);
+  text-align: center; /* samlet p selector (tidligere duplikat) */
+}
+
+/* generel img-regel (overrides for kort-billeder findes længere nede) */
+img {
+  width: 100%;
+}
+
+/* utility */
+.flex {
+  display: flex;
+}
+
+/* ===========================
+   NAVIGATION
+   =========================== */
+#topNav {
+  background-color: rgb(255, 255, 255);
+}
+
+nav.top-nav {
+  position: relative;          /* Gør nav til reference for absolut positionerede elementer (fx centrering af logo) */
+  display: flex;               /* Aktiverer flexbox layout */
+  align-items: center;         /* Vertikal centrering af indhold */
+  justify-content: space-between; /* Lægger elementer i hver sin side af nav'en */
+  background: #ffffff;         /* Hvid baggrund */
+  padding: 0.5rem 2rem;        /* Luft inde i navigationen (top/bund 0.5rem, sider 2rem) */
+  height: 60px;                /* Fast højde på navigationen */
+}
+
+/* Burgermenu */
+nav.top-nav .nav-links {
+  display: flex;
+  gap: 2rem;
+  list-style: none;
+  align-items: center;
+}
+
+nav.top-nav .nav-links li a {
+  font-size: 25px;
+  line-height: 1;
+  padding: 10px;
+}
+nav.top-nav .nav-links a {
+  text-decoration: none;
+  color: #222222;
+  font-size: 1.2rem;
+}
+
+/* logo centreret */
+nav.top-nav .logo {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 5;
+  pointer-events: none;
+}
+nav.top-nav .logo img {
+  height: 65px;
+  width: auto;
+  max-width: 140px;
+  pointer-events: auto;
+}
+
+/* højre ikoner */
+nav.top-nav .favorites,
+nav.top-nav .basket,
+nav.top-nav .profile {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 0.9rem;
+  color: #222222;
+}
+
+nav.top-nav .favorites img,
+nav.top-nav .basket img,
+nav.top-nav .profile img {
+  height: 24px;
+  width: auto;
+  display: block;
+  line-height: 24px;
+}
+
+/* SØGEBAR */
+nav.top-nav .search-bar {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex: 0 0 auto;
+  max-width: 260px;
+  height: 60%;
+  padding: 6px 8px;
+  background: #f1f1f1;
+  border-radius: 999px;
+  align-self: center;
+  margin-left: auto;
+  box-shadow: 0 1px 0 rgba(0,0,0,0.03);
+}
+
+nav.top-nav .search-bar input,
+nav.top-nav .search-bar button {
+  height: 20px;
+  background: transparent;
+  border: none;
+  outline: none;
+  line-height: normal;
+  font-size: 18px;
+}
+
+nav.top-nav .search-bar input {
+  flex: 1 1 auto;
+  padding: 0 0 0 10px;
+  border-radius: 999px;
+  color: #333;
+}
+
+nav.top-nav .search-bar input::placeholder {
+  color: #9a9a9a;
+  opacity: 1;
+}
+
+/* ===========================
+   HERO / HEADER
+   =========================== */
+.hero {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.hero-video {
+  filter: brightness(0.8);
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  border-radius: inherit;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.3);
+  z-index: 1;
+  pointer-events: none;
+}
+
+.hero-text {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1;
+  color: white;
+  text-align: center;
+  font-size: 3rem;
+  letter-spacing: 0.2em;
+}
+
+.hero-text h1 {
+  color: #f1dfc1;
+}
+
+/* ekstra nulstilling */
+body,
+header {
+  margin: 0;
+  padding: 0;
+}
+
+section.hero {
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+.hero-text h1 {
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+/* produkt-tekst i hero */
+.produkt-tekst {
+  position: absolute;
+  bottom: 150px;
+  left: 50px;
+  max-width: 500px;
+  color: #f1dfc1;
+  font-size: 30px;
+  line-height: 1.5;
+  font-weight: bold;
+  text-shadow: 0 3px 10px rgba(0, 0, 0, 0.45);
+}
+
+/* CTA-knap */
+.cta-button {
+  display: inline-block;
+  background-color: #e67e50;
+  color: white;
+  padding: 14px 40px;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: bold;
+  font-size: 1rem;
+  letter-spacing: 0.1em;
+  transition: background-color 0.3s ease;
+  position: absolute;
+  bottom: 50px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10;
+  border: none 
+}
+
+.cta-button:hover {
+  background-color: #d46a3a;
+}
+
+/* ===========================
+   PRODUKTER / GRID & CARDS
+   =========================== */
+
+/* Grid container (endelig/effektive værdier fra din fil) */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, 320px); /* kolonne-bredde inkl. lidt luft */
+  column-gap: 200px; /* afstand mellem kolonner */
+  row-gap: 60px;
+  justify-content: center; /* centrer grid i container */
+  margin: 0 auto 80px;
+  padding: 0 24px;
+  max-width: none; /* sørg for at grid kan brede sig */
+}
+
+/* Card størrelse & layout (endelig/effektive værdier) */
+.grid .product {
+  width: 287px;
+  height: 310px;
+  min-height: auto;
+  padding: 20px;
+  box-sizing: border-box;
+  position: relative;
+  background: #ffffff;
+  border-radius: 16px;
+  
+  /* bevaret skygge fra tidligere */
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  overflow: visible;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/* hover effekt */
+.grid .product:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.12);
+}
+
+/* nyhed ribbon */
+.grid .product .nyhed {
+  position: absolute;
+  top: 12px;               /* afstand fra toppen */
+  left: 12px;              /* afstand fra venstre */
+  padding: 4px 12px;       /* højde og bredde på båndet */
+  background: #e67e50;     /* accent-farve */
+  color: #fff;
+  font-weight: 700;
+  font-size: 0.75rem;
+  border-radius: 6px;      /* rundede hjørner */
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+  z-index: 6;
+  pointer-events: none;
+  transform: none !important;      /* fjerner rotation */
+  width: auto !important;          /* så bredde passer til teksten */
+  text-align: center;
+}
+
+
+/* Favorit-ikon – Figma style (ingen cirkel, ingen baggrund) */
+.grid .product .favorites-icon {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background: none;          /* Fjern hvid baggrund */
+  border: none;              /* Fjern stroke */
+  width: auto;               
+  height: auto;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: none;          /* Fjern skygge */
+}
+
+.grid .product .favorites-icon img {
+  width: 22px;               /* Lidt større giver Figma-look */
+  height: 22px;
+  object-fit: contain;
+  filter: none;              /* ingen fading/skygge */
+}
+
+/* Hover: kun lille zoom */
+.grid .product .favorites-icon:hover {
+  transform: scale(1.1);
+}
+
+
+/* produkt-image area (justeret til sidste værdier) */
+.grid .product .product-image {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 140px; 
+  margin: 8px 0 12px;
+}
+
+.grid .product .product-image img {
+  width: auto;
+  max-width: 160px; 
+  height: auto;
+  object-fit: contain;
+  filter: drop-shadow(0 12px 8px rgba(0, 0, 0, 0.08));
+}
+
+/* produkt tekst wrapper og typografi */
+.grid .product .product-body {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.grid .product h3 {
+  font-size: 0.95rem;
+  text-align: left;
+  margin: 0;
+  color: #222;
+  font-weight: 700;
+  line-height: 1.3;
+  font-family: Arial, sans-serif;
+}
+
+.grid .product .price {
+  font-size: 0.9rem;
+  color: #222;
+  text-align: left;
+  margin: 0;
+  font-weight: 600;
+  font-family: Arial, sans-serif;
+}
+
+/* ===========================
+   PROMO / FUNKTIONER / TRUSTPILOT
+   =========================== */
+.promo-section.promo--totes {
+  --container-width: 1200px;
+  max-width: var(--container-width);
+  margin: 60px auto;
+  padding: 36px 48px;
+  display: grid;
+  grid-template-columns: 1fr 420px 420px; /* venstre: fleksibel, midte+højre faste */
+  gap: 32px;
+  align-items: center;
+  align-content: center;
+  position: relative;
+  box-sizing: border-box;
+  background: transparent;
+}
+
+/* VENSTRE billede (tote + arm) */
+.promo-section .tote-item {
+  justify-self: start;
+  overflow: visible;               /* så armen kan stikke ud */
+  display: flex;
+  align-items: center;
+  height: 420px;                   /* højden af området */
+}
+
+.promo-section .tote-item img {
+  display: block;
+  width: 420px;                    /* stor bredde så armen kan række ud */
+  max-width: none;
+  height: auto;
+  object-fit: contain;
+  transform: translateX(-200px);    /* flyt billedet mod venstre så armen stikker ud */
+}
+
+/* MIDTER-TEKST */
+.promo-section .promo-text--center {
+  text-align: left;
+  padding: 6px 18px;
+  transform: translate(-150px, -200px); /* X = venstre, Y = op */
+}
+
+.promo-section .promo-title {
+  margin: 0 0 12px 0;
+  font-size: 36px;                 /* overskrift størrelse */
+  line-height: 1.05;
+  font-weight: 700;
+}
+
+/*BRØD TEKST*/
+.promo-section .promo-text--center p {
+  margin: 0;
+  font-size: 18px;               /* brødtekst størrelse */
+  line-height: 1.45;    
+  max-width: 170px;   
+  text-align: left; /* venstrestillet tekst */
+  transform: translate(120px); /* Flyt tekst mod midten */
+}
+
+/* HØJRE billede */
+.promo-section .promo-item--right {
+  justify-self: end;
+  display: flex;
+  align-items: center;
+  transform: translate(-140px, 40px); 
+  /* -140px → rykker billedet ind mod midten  
+     40px → rykker billedet lidt ned */
+}
+
+.promo-section .promo-item--right img {
+  display: block;
+  width: 300px;      /* større billedstørrelse  */
+  height: auto;
+  object-fit: cover;
+
+  border-radius: 28px; /* beholder Figma-look */
+  box-shadow: none  ; /* ingen skygge eller hvid kant */
+  background: transparent; /* ingen baggrund */
+}
+
+/* Overskrift til funktioner — samme stil som "Medfølgende tote bag" */
+.funktioner h2 {
+  font-size: 36px;           /* samme skriftstørrelse */
+  font-weight: 700;
+  line-height: 1.05;
+  color: #222;
+  margin-bottom: 28px;
+  text-align: center;
+  font-family: "cormorant garamond", serif; 
+}
+
+/* Funktioner */
+/* Sektion titel */
+.funktioner-title {
+  font-size: 36px;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 40px;
+  font-family: "Cormorant Garamond", serif;
+  color: #222;
+}
+
+/* Grid layout */
+.funktioner-wrapper {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 60px 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+  box-sizing: border-box;
+}
+
+/* Hvert item */
+.funktion-item {
+  text-align: left;
+  max-width: 260px;
+}
+
+/* Ikoner */
+.funktion-item img {
+  width: 60px;
+  margin-bottom: 12px;
+}
+
+/* Titel */
+.funktion-item h3 {
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 8px;
+  color: #222;
+}
+
+/* Tekst */
+.funktion-item p {
+  font-size: 15px;
+  line-height: 1.4;
+  color: #333;
+  text-align: left;
+}
+
+.funktioner-wrapper {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(200px, 1fr)); 
+  gap: 60px 40px;
+  max-width: 1200px;      /* reducer bredden så sektionen centreres */
+  margin: 0 auto;
+  justify-items: center;  /* centrer hvert item */
+}
+
+/* Anmeldser */
+.reviews {
+  max-width: 1200px;
+  margin: 60px auto 80px;
+  padding: 0 24px;
+  box-sizing: border-box;
+  padding-left: 24px;
+  padding-right: 24px;
+  box-sizing: border-box;
+}
+
+/* stor, centreret titel */
+.reviews-title {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 36px;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 40px;
+  color: #111;
+}
+
+/* grid: 3 kolonner på desktop, 1 kolonne på small screens */
+.reviews-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr)); /* fylder tilgængelig plads */
+  gap: 48px 48px; /* lodret / vandret afstand */
+  align-items: start;
+  justify-items: stretch;
+}
+
+/* hvert review-kort */
+.review-item {
+  max-width: 420px;           /* bredde af kolonne-tekst */
+  margin: 0;                  /* fjerner auto-centering så grid bestemmer placering */
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  align-items: flex-start;    /* VENSTRESTILLET indhold */
+}
+
+/* stjernerne */
+.review-item .stars {
+  width: 190px;               
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 0 6px 0;          /* lidt afstand til teksten */
+  image-rendering: -webkit-optimize-contrast; /* gør billedet lidt skarpere i nogle browsere */
+}
+
+/* Hver stjernes størrelse */
+img[src*="firestjerner"] {
+  width: 110px !important;
+  height: auto !important;
+}
+
+img[src*="femstjerner"] {
+  width: 140px !important;
+  height: auto !important;
+}
+
+
+/* review-tekst: venstrestillet og god line-length */
+.review-text {
+  margin: 0;
+  font-size: 15px;
+  line-height: 1.6;
+  color: #222;
+  text-align: left; /* override global centering */
+  width: 100%;
+}
+
+/* navn under teksten - venstrestillet */
+.review-name {
+  margin: 8px 0 0;
+  font-size: 20px;
+  font-weight: 800;
+  color: #111;
+  text-align: left;
+}
+
+/* link / tæller under grid */
+.review-count {
+  text-align: center;
+  margin-top: 36px;
+  font-size: 16px;
+  color: #222;
+}
+
+/* --- Sørg for at review-kort har samme højde og at navne ligger i bunden --- */
+.reviews-grid {
+  /* sørg for at hver grid-celle kan strækkes i højden */
+  align-items: stretch;
+}
+
+.review-item {
+  /* overskriv tidligere align-items og sørg for at kortets indhold
+     fordeles lodret så navnet "hænger" i bunden */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: stretch; /* så .review-text kan fylde pladsen */
+  height: 100%;         /* gør at elementet udfylder grid-cellen */
+  box-sizing: border-box;
+}
+
+/* lad teksten fylde den fleksible plads, så navnet skubbes ned */
+.review-text {
+  flex: 1 1 auto;
+  margin-bottom: 12px; /* lille afstand til navnet */
+}
+
+/* navnet placeres i bunden og er venstrejusteret som før */
+.review-name {
+  margin: 0;
+  padding-top: 8px;
+  text-align: left;
+}
+
+/* typografi helper (beholdt din reference til eksterne fonte) */
+.hero-text h1 {
+  font-family: "cormorant garamond", serif;
+}
+
+/* ===========================
+   FOOTER
+   =========================== */
+#CTA {
+  margin-top: 4rem;
+  margin-bottom: 4rem;
+}
+
+footer {
+  background-color: #fdfaf7;
+  padding: 40px 20px 20px;
+  font-family: Arial, sans-serif;
+  color: #111;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.footer-col {
+  flex: 1;
+  min-width: 200px;
+}
+
+.footer-col h4 {
+  margin-bottom: 15px;
+  font-size: 20px;
+}
+
+.footer-col p,
+.footer-col a {
+  margin: 8px 0;
+  color: #111;
+  text-decoration: none;
+}
+
+.socials img {
+  width: 32px;
+  margin-right: 10px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+form input[type="email"] {
+  padding: 12px;
+  border: none;
+  border-radius: 6px;
+  background-color: #eee;
+}
+
+form button {
+  background-color: #e26a3c;
+  color: white;
+  padding: 12px;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+form button:hover {
+  background-color: #d45a2e;
+}
+
+.footer-bottom {
+  text-align: left;
+  margin-top: 30px;
+  font-size: 14px;
+  margin-left: -1200px;
+}
+
+.footer-col h4 {
+  text-align: center;
+}
+
+.socials {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+
+/* 1) Sørg for venstre kolonne (Følg os) starter fra samme venstre indrykning */
+.footer-col:first-child {
+  flex: 0 0 220px !important;   /* fast kolonnebredde = venstre start */
+  text-align: left !important;  /* sørger for at indholdet står til venstre i kolonnen */
+  box-sizing: border-box;
+}
+
+/* 2) Midter- og højre kolonne */
+.footer-col:nth-child(2) {
+  flex: 0 0 360px !important;
+  text-align: center;
+}
+
+.footer-col:last-child {
+  flex: 0 0 360px !important;
+  text-align: right;
+  box-sizing: border-box;
+}
+
+/* 3) Force sociale ikoner i venstre kolonne til venstre */
+.footer-col:first-child .socials {
+  display: flex !important;
+  justify-content: flex-start !important;
+  gap: 12px !important;
+}
+
+/* 4) Sørg for overskrift i venstre kolonne er venstrejusteret */
+.footer-col:first-child h4 {
+  text-align: left !important;
+}
+
+/* 5) Begræns kun nyhedsbrev-inputets bredde (lad knappen være som den er) */
+.footer-col:last-child form input[type="email"] {
+  width: 100%;
+  max-width: 300px;
+  box-sizing: border-box;
+}
+
+/* Footer: præcis alignment fixes */
+
+/* 1) Midterkolonnen: gør den til en centreret kolonne med en smallere content-blok */
+.footer-col:nth-child(2) {
+  display: flex;
+  flex-direction: column;
+  align-items: center;   /* titel centreres horisontalt */
+  text-align: center;
+  box-sizing: border-box;
+}
+
+/* content-blokken (kontaktlinjer) bliver smallere, centreret, men indholdet inde i den er venstrejusteret */
+.footer-col:nth-child(2) .contact-block,
+.footer-col:nth-child(2) p,
+.footer-col:nth-child(2) a {
+  max-width: 260px;      /* gør blokken smallere så den kan centreres under titlen */
+  width: 100%;
+  margin: 6px auto;      /* centrer blokken horisontalt i kolonnen */
+  text-align: left;      /* og sørg for at linjerne i blokken er venstre-justerede */
+  display: block;
+}
+
+/* hvis ikoner er billeder eller bi-ikoner, hold dem inline og tving dem til sidestilling */
+.footer-col:nth-child(2) img,
+.footer-col:nth-child(2) .bi {
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 10px;
+}
+
+/* 2) Højre kolonne (Nyhedsbrev): sørg for at tekst+input+knap starter samme sted */
+.footer-col:last-child {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; /* VIGTIG: venstrestart inde i kolonnen */
+  text-align: left;
+  box-sizing: border-box;
+}
+
+/* hold input + knap i samme max-bredde så de starter samme sted */
+.footer-col:last-child form {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.footer-col:last-child form input[type="email"],
+.footer-col:last-child form button {
+  max-width: 350px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* 3) Behold Følg os venstrejusteret (sikring) */
+.footer-col:first-child {
+  text-align: left !important;
+}
+
+.footer-col:first-child .socials {
+  justify-content: flex-start !important;
+}
+
+/* Kontakt os: titel centreret, indhold venstrejusteret og rykket ind så det ligger under K */
+.footer-col:nth-child(2) {
+  text-align: center; /* behold overskriften centreret */
+}
+
+.footer-col:nth-child(2) p,
+.footer-col:nth-child(2) a {
+  text-align: left;           /* venstrejuster alle linjer */
+  margin-left: 100px;          /* RYKKER ENTIRE BLOKKEN ind så den står under K */
+  display: flex;              /* gør ikon + tekst på linje */
+  align-items: center;
+}
+
+/* Mail-linjen: ikon og tekst skal stå tættere sammen */
+.footer-col:nth-child(2) p:nth-of-type(2) {
+  display: flex;
+  align-items: center;
+  gap: 0px;   
+}
+
+/* Gendan linket til inline/auto bredde (så det ikke fylder hele linjen) */
+.footer-col:nth-child(2) p a {
+  display: inline-block !important;
+  width: auto !important;
+  margin: 0 !important;
+}
+
+/* Ryk hele mail-linjen samme sted hen som de andre */
+.footer-col:nth-child(2) p:nth-of-type(2) {
+  margin-left: 100px !important;
+}
+
+.footer-col:nth-child(2) img,
+.footer-col:nth-child(2) .bi {
+  margin-right: 10px; /* lille luft mellem ikon og tekst */
+}
+
+/* BACK TO TOP KNAP */
+#backToTop {
+  position: fixed; /* fast position på skærmen */
+  bottom: 30px; /* afstand fra bunden */
+  right: 30px; /* afstand fra højre */
+  background-color: #e26a3c; 
+  color: white; 
+  border: none; /* ingen kant */
+  padding: 12px 16px; 
+  border-radius: 8px;/* afrundede hjørner */
+  cursor: pointer; 
+  font-size: 16px;
+  font-weight: bold;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+#backToTop.show {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* Footer: flyt midterkolonnen en smule mod venstre
+   og tving nyhedsbrev-kolonnen ud til højre  */
+
+.footer-container {
+  align-items: flex-start; /* sørger for at kolonner starter i samme top */
+}
+
+/* Venstre kolonne: behold fast bredde */
+.footer-col:first-child {
+  flex: 0 0 220px;
+  max-width: 220px;
+}
+
+/* Midterkolonnen ("Kontakt os"): gøres smallere og rykkes en smule mod venstre */
+.footer-col:nth-child(2) {
+  flex: 0 0 300px;    
+  max-width: 300px;
+  margin-right: 10px; /* lidt luft til højre */
+  align-self: flex-start; 
+  margin-left: 0 !important;
+}
+
+/* Højre kolonne (Nyhedsbrev): skubbes helt ud til højre */
+.footer-col:last-child {
+  margin-left: auto;      /* tvinger denne kolonne længst til højre */
+  flex: 0 0 360px;        /* max-bredde på indholdet */
+  max-width: 360px;
+  text-align: right;      /* højre-juster tekst */
+  align-self: flex-start; /* lås top */
+  box-sizing: border-box;
+}
+
+/* Formularens elementer i højre kolonne */
+.footer-col:last-child form {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;  /* rykker input/knap mod højre */
+  gap: 12px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.footer-col:last-child form input[type="email"],
+.footer-col:last-child form button {
+  width: 100%;
+  max-width: 360px;
+  box-sizing: border-box;
+}
+
+/* ===========================
+   RESPONSIVE (beholdt som i din fil)
+   =========================== */
+@media (max-width: 900px) {
+  nav.top-nav .logo img {
+    height: 42px;
+  }
+  nav.top-nav {
+    padding: 0.5rem 1rem;
+  }
+  nav.top-nav .search-bar {
+    max-width: 220px;
+  }
+}
+
+@media (max-width: 600px) {
+  body {
+    background-color: white;
+  }
+  nav.top-nav .logo {
+    position: static;
+    transform: none;
+    left: auto;
+    top: auto;
+    pointer-events: auto;
+  }
+  nav.top-nav {
+    height: auto;
+    padding: 0.5rem 1rem;
+  }
+  nav.top-nav .search-bar {
+    max-width: 180px;
+  }
+  #stemning {
+    display: block;
+  } /* NOTE: #stemning findes ikke i HTML */
+}
+
+@media (min-width: 601px) and (max-width: 1024px) {
+  body {
+    background-color: white;
+  }
+  #stemning {
+    display: block;
+  } /* samme note som ovenfor */
+}
